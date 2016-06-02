@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	if(!user)
+		h1 Log je eerst in om de webshop te kunnen bekijken.
+	if(user)
+		h1= title
+		div(ng-controller="Webshop")
+			.alert.alert-success(ng-if="message")
+				p {{message}}
+			.webshop-cards
+				.card(ng-repeat="item in items")
+					img.card-img-top(src="http://www.pianto.lu/photo/photo%20Egelseer%20rere.jpg", alt="pianto")
+					.card-block
+						h4.card-title {{item.name}}
+						p.card-text {{item.price}}
+						a.card-button.btn.btn-primary(ng-click="VoegToeAanWinkelmand('#{user._id}', item._id)") In winkelmand
+			
+
+			

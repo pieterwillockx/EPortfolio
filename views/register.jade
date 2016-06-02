@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Maak een account aan
+	p.lead Vul de gegevens in en klik op "Registreren" om een account aan te maken.
+	br
+	form(role="form", action="/accounts/register", method="post")
+		div.form-group
+			label(for="username") Email address:
+			input#email.form-control(type="text", name="username", placeholder="Gebruikersnaam")
+		div.form-group
+			label(for="password") Password:
+			input#password.form-control(type="password", name="password", placeholder="Paswoord")
+		button.btn.btn-default(type="submit") Submit
+	br
+	h4= info

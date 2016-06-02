@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	.content-card
+		h4.card-title Inhoud
+		ul
+			each item in items
+				li= item.name, item.price
